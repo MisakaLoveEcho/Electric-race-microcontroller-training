@@ -4,4 +4,6 @@
 
 [例程代码](https://github.com/MisakaLoveEcho/Electric-race-microcontroller-training/tree/main/example)
 
+[onenote教程笔记](https://github.com/MisakaLoveEcho/Electric-race-microcontroller-training/tree/main/%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0)
+
 [Wiki教程](https://github.com/MisakaLoveEcho/Electric-race-microcontroller-training/wiki)
