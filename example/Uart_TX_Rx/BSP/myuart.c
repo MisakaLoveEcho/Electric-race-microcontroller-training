@@ -16,13 +16,13 @@
 void Uart_Send_DMA(Uart_It*uart,char *fmt, ...){        
     va_list ap;  
     va_start(ap, fmt); 
+    while(_UART_NOT_READY(uart->huart)){} //等待串口准备完成
     int sendLen = vsnprintf((char*)uart->Txbuffer, PACKSIZE, fmt, ap);
 //使用Cache的情况下，手动将数据写入内存    
 #if USE_CACHE   
     SCB_CleanInvalidateDCache_by_Addr((uint32_t*)uart->Txbuffer,(sendLen+31)/32*32);
 #endif 
-    while(_UART_NOT_READY(uart->huart)){} //等待串口准备完成
-		HAL_UART_Transmit_DMA(uart->huart,uart->Txbuffer,sendLen);
+    HAL_UART_Transmit_DMA(uart->huart,uart->Txbuffer,sendLen);
     va_end(ap);
 }
 
