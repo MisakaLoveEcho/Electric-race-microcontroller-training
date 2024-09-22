@@ -99,7 +99,7 @@ int main(void)
   MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
 	
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RX, 32);//开启串口接收中断
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RX, 32);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,10 +107,10 @@ int main(void)
   while (1)
   {
 		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-		HAL_UART_Transmit(&huart1,(uint8_t*)"hello world\n",12,10);//串口发送一个已知字符串
+		HAL_UART_Transmit(&huart1,(uint8_t*)"hello world\n",12,10);
 		HAL_Delay(1);
-		sprintf(TX,"system start\n");//初始化一个字符串，类似printf的用法
-		HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));//发送字符串
+		sprintf(TX,"system start\n");
+		HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));
 		HAL_Delay(300);
     /* USER CODE END WHILE */
 
@@ -167,32 +167,11 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size){
 		if(huart==&huart1){
-			HAL_UART_Transmit(&huart1,RX,Size,10);//将接收到的字符串发送回去
+			HAL_UART_Transmit(&huart1,RX,Size,10);
 			HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RX, 32);
 		}
 }
 /* USER CODE END 4 */
-
-/**
-  * @brief  Period elapsed callback in non blocking mode
-  * @note   This function is called  when TIM6 interrupt took place, inside
-  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
-  * a global variable "uwTick" used as application time base.
-  * @param  htim : TIM handle
-  * @retval None
-  */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-{
-  /* USER CODE BEGIN Callback 0 */
-
-  /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM6) {
-    HAL_IncTick();
-  }
-  /* USER CODE BEGIN Callback 1 */
-
-  /* USER CODE END Callback 1 */
-}
 
 /**
   * @brief  This function is executed in case of error occurrence.

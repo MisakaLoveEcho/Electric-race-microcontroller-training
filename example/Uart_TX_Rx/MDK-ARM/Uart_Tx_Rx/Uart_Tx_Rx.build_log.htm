@@ -21,20 +21,20 @@ Target DLL:      CMSIS_AGDI.dll V1.33.18.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-C:\Users\w2054\Desktop\stm32_project\G474VET6\Uart_TX_Rx\MDK-ARM\Uart_Tx_Rx.uvprojx
-Project File Date:  09/21/2024
+C:\Users\w2054\Desktop\stm32_project\G474VET6\Electric-race-microcontroller-training\example\Uart_TX_Rx\MDK-ARM\Uart_Tx_Rx.uvprojx
+Project File Date:  09/22/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'D:\industrial software\keilv5\ARM\ARMCLANG\Bin'
 Build target 'Uart_Tx_Rx'
 ../Core/Src/main.c(112): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-  112 |                 sprintf(TX,"system start\n");//<B3><F5>ʼ<BB><AF>һ<B8><F6><D7>ַ<FB><B4><AE><A3><AC><C0><E0><CB><C6>printf<B5><C4><D3>÷<A8>
+  112 |                 sprintf(TX,"system start\n");
       |                         ^~
 D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\stdio.h(417): note: passing argument to parameter here
   417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
       |                                                   ^
 ../Core/Src/main.c(113): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-  113 |                 HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));//<B7><A2><CB><CD><D7>ַ<FB><B4><AE>
+  113 |                 HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));
       |                                                         ^~
 D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\string.h(335): note: passing argument to parameter here
   335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
@@ -42,7 +42,7 @@ D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\string.h(335): note: p
 2 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=14790 RO-data=586 RW-data=12 ZI-data=4860  
+Program Size: Code=14482 RO-data=586 RW-data=12 ZI-data=4780  
 FromELF: creating hex file...
 "Uart_Tx_Rx\Uart_Tx_Rx.axf" - 0 Error(s), 2 Warning(s).
 

@@ -8,7 +8,6 @@
 "uart_tx_rx\usart.o"
 "uart_tx_rx\stm32g4xx_it.o"
 "uart_tx_rx\stm32g4xx_hal_msp.o"
-"uart_tx_rx\stm32g4xx_hal_timebase_tim.o"
 "uart_tx_rx\stm32g4xx_hal_spi.o"
 "uart_tx_rx\stm32g4xx_hal_spi_ex.o"
 "uart_tx_rx\stm32g4xx_hal.o"
