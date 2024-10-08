@@ -1,0 +1,59 @@
+Load "G474VET6Test\\G474VET6Test.axf" 
+Set JLink Project File to "c:\Users\w2054\Desktop\stm32_project\G474VET6Test\MDK-ARM\JLinkSettings.ini"* JLink Info: Device "STM32G474VE" selected.
+
+JLink info:
+------------
+DLL: V7.96h, compiled May 15 2024 15:33:59
+Firmware: J-Link V11 compiled May 28 2024 15:36:02
+Hardware: V11.00
+S/N : 601012352 
+Feature(s) : RDI, FlashBP, FlashDL, JFlash, GDB 
+
+* JLink Info: InitTarget() start
+* JLink Info: SWD selected. Executing JTAG -> SWD switching sequence.
+* JLink Info: DAP initialized successfully.
+* JLink Info: InitTarget() end - Took 12.8ms
+* JLink Info: Found SW-DP with ID 0x2BA01477
+* JLink Info: DPIDR: 0x2BA01477
+* JLink Info: CoreSight SoC-400 or earlier
+* JLink Info: Scanning AP map to find all available APs
+* JLink Info: AP[1]: Stopped AP scan as end of AP map has been reached
+* JLink Info: AP[0]: AHB-AP (IDR: 0x24770011)
+* JLink Info: Iterating through AP map to find AHB-AP to use
+* JLink Info: AP[0]: Core found
+* JLink Info: AP[0]: AHB-AP ROM base: 0xE00FF000
+* JLink Info: CPUID register: 0x410FC241. Implementer code: 0x41 (ARM)
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: Cortex-M: The connected J-Link (S/N 601012352) uses an old firmware module: V1 (current is 2)
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: CoreSight components:
+* JLink Info: ROMTbl[0] @ E00FF000
+* JLink Info: [0][0]: E000E000 CID B105E00D PID 000BB00C SCS-M7
+* JLink Info: [0][1]: E0001000 CID B105E00D PID 003BB002 DWT
+* JLink Info: [0][2]: E0002000 CID B105E00D PID 002BB003 FPB
+* JLink Info: [0][3]: E0000000 CID B105E00D PID 003BB001 ITM
+* JLink Info: [0][4]: E0040000 CID B105900D PID 000BB9A1 TPIU
+* JLink Info: [0][5]: E0041000 CID B105900D PID 000BB925 ETM
+ROMTableAddr = 0xE00FF000
+* JLink Info: Reset: Halt core after reset via DEMCR.VC_CORERESET.
+* JLink Info: Reset: Reset device via AIRCR.SYSRESETREQ.
+
+Target info:
+------------
+Device: STM32G474VETx
+VTarget = 3.238V
+State of Pins: TCK: 0, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 5000 kHz
+
+* JLink Info: Memory map 'after startup completion point' is active
+Erase Done.Programming Done.Verify OK.* JLink Info: Memory map 'before startup completion point' is active
+* JLink Info: Reset: Halt core after reset via DEMCR.VC_CORERESET.
+* JLink Info: Reset: Reset device via AIRCR.SYSRESETREQ.
+* JLink Info: Memory map 'after startup completion point' is active
+Application running ...
+* JLink Info: OnDisconnectTarget() start
+* JLink Info: OnDisconnectTarget() end - Took 993us
+Flash Load finished at 13:47:55

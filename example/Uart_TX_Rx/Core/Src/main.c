@@ -100,6 +100,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	
 	HAL_UARTEx_ReceiveToIdle_DMA(&huart1,RX, 32);
+	
+	uint16_t adcValue=199;
+	uint8_t txbuffer[32];
+	sprintf(txbuffer,"adc:%d\n",adcValue);
+	HAL_UART_Transmit(&huart1,txbuffer,strlen(txbuffer),10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,7 +112,7 @@ int main(void)
   while (1)
   {
 		HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-		HAL_UART_Transmit(&huart1,(uint8_t*)"hello world\n",12,10);
+		
 		HAL_Delay(1);
 		sprintf(TX,"system start\n");
 		HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));

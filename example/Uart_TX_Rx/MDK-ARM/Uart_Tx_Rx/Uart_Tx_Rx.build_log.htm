@@ -22,29 +22,41 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\Users\w2054\Desktop\stm32_project\G474VET6\Electric-race-microcontroller-training\example\Uart_TX_Rx\MDK-ARM\Uart_Tx_Rx.uvprojx
-Project File Date:  09/22/2024
+Project File Date:  09/26/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.22', folder: 'D:\industrial software\keilv5\ARM\ARMCLANG\Bin'
 Build target 'Uart_Tx_Rx'
-../Core/Src/main.c(112): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-  112 |                 sprintf(TX,"system start\n");
+../Core/Src/main.c(106): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  106 |         sprintf(txbuffer,"adc:%d\n",adcValue);
+      |                 ^~~~~~~~
+D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\stdio.h(417): note: passing argument to parameter here
+  417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+      |                                                   ^
+../Core/Src/main.c(107): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  107 |         HAL_UART_Transmit(&huart1,txbuffer,strlen(txbuffer),10);
+      |                                                   ^~~~~~~~
+D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\string.h(335): note: passing argument to parameter here
+  335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+      |                                                ^
+../Core/Src/main.c(117): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  117 |                 sprintf(TX,"system start\n");
       |                         ^~
 D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\stdio.h(417): note: passing argument to parameter here
   417 | extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
       |                                                   ^
-../Core/Src/main.c(113): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
-  113 |                 HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));
+../Core/Src/main.c(118): warning: passing 'uint8_t[32]' (aka 'unsigned char[32]') to parameter of type 'const char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  118 |                 HAL_UART_Transmit_DMA(&huart1,TX,strlen(TX));
       |                                                         ^~
 D:\industrial software\keilv5\ARM\ARMCLANG\bin\..\include\string.h(335): note: passing argument to parameter here
   335 | extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
       |                                                ^
-2 warnings generated.
+4 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=14482 RO-data=586 RW-data=12 ZI-data=4780  
+Program Size: Code=14918 RO-data=586 RW-data=12 ZI-data=4780  
 FromELF: creating hex file...
-"Uart_Tx_Rx\Uart_Tx_Rx.axf" - 0 Error(s), 2 Warning(s).
+"Uart_Tx_Rx\Uart_Tx_Rx.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 

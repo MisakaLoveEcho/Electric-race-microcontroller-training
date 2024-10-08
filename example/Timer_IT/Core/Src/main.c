@@ -161,6 +161,7 @@ void SystemClock_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	static uint16_t counter=0;
+	
 	if(htim==&htim7){
 		counter++;
 		if(counter==200){
