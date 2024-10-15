@@ -1,0 +1,32 @@
+g474vet6test/complexmathfunctions.o: \
+  ..\ARM_DSP\Source\ComplexMathFunctions\ComplexMathFunctions.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_conj_f32.c \
+  ..\ARM_DSP\Include\dsp\complex_math_functions.h \
+  ..\ARM_DSP\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  ..\Drivers\CMSIS\Include\cmsis_armclang.h \
+  ..\ARM_DSP\Include\arm_math_memory.h ..\ARM_DSP\Include\dsp\none.h \
+  ..\ARM_DSP\Include\dsp\utils.h \
+  ..\ARM_DSP\Include\dsp\fast_math_functions.h \
+  ..\ARM_DSP\Include\dsp\basic_math_functions.h \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_conj_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_conj_q31.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_dot_prod_f32.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_dot_prod_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_dot_prod_q31.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_f32.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_f64.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_fast_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_q31.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_squared_f32.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_squared_f64.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_squared_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mag_squared_q31.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_cmplx_f32.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_cmplx_f64.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_cmplx_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_cmplx_q31.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_real_f32.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_real_q15.c \
+  ..\ARM_DSP\Source\ComplexMathFunctions\arm_cmplx_mult_real_q31.c
