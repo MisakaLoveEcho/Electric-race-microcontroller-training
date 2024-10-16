@@ -8,7 +8,7 @@
 const uint16_t ShortKey=8;//count number of short presses
 const uint16_t LongKey=40;//count number of long presses
 
-uint8_t Key_Read(bool *LongKeyMode){	
+uint8_t Key_Read(){	
 	static uint8_t number;
 	static bool KeyUp=true;
 	static uint16_t count=0;
@@ -24,19 +24,18 @@ uint8_t Key_Read(bool *LongKeyMode){
 		if(count<ShortKey){
 			count=0;
 			number=0;
-			return 0;
+			return KEY_NONE;
 		}
 		//short presses
 		else if(count>=ShortKey&&count<=LongKey){
 			count=0;		
-			return number;
+			return number*2-1;
 		}
 		//long presses
 		else if(count>=LongKey){
 			count=0;	
-			*LongKeyMode=true;	
-			return number;
+			return number*2;
 		}
 	}
-	else return 0;	
+	else return KEY_NONE;	
 }

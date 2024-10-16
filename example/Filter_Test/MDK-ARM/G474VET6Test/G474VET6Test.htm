@@ -3,7 +3,7 @@
 <title>Static Call Graph - [G474VET6Test\G474VET6Test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image G474VET6Test\G474VET6Test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed Oct 16 21:46:03 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6220000: Last Updated: Wed Oct 16 22:06:02 2024
 <BR><P>
 <H3>Maximum Stack Usage =        528 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -729,12 +729,12 @@ Global Symbols
 <P><STRONG><a name="[91]"></a>HAL_InitTick</STRONG> (Thumb, 166 bytes, Stack size 40 bytes, stm32g4xx_hal_timebase_tim.o(.text.HAL_InitTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+<BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetClockConfig
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -905,6 +905,7 @@ Global Symbols
 
 <P><STRONG><a name="[96]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 182 bytes, Stack size 0 bytes, stm32g4xx_hal_tim.o(.text.HAL_TIM_Base_Start_IT))
 <BR><BR>[Called By]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[a7]"></a>HAL_TIM_IC_CaptureCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32g4xx_hal_tim.o(.text.HAL_TIM_IC_CaptureCallback))
@@ -912,7 +913,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a6]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 454 bytes, Stack size 24 bytes, stm32g4xx_hal_tim.o(.text.HAL_TIM_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_TransitionErrorCallback
@@ -940,7 +941,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[aa]"></a>HAL_TIM_PeriodElapsedCallback</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, main.o(.text.HAL_TIM_PeriodElapsedCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_IncTick
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_Process
@@ -1054,8 +1055,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
-<P><STRONG><a name="[b4]"></a>Key_Process</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, main.o(.text.Key_Process))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
+<P><STRONG><a name="[b4]"></a>Key_Process</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, main.o(.text.Key_Process))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Key_Read
 <LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Uart_Send_DMA
@@ -1063,7 +1064,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
 
-<P><STRONG><a name="[c6]"></a>Key_Read</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, key.o(.text.Key_Read))
+<P><STRONG><a name="[c6]"></a>Key_Read</STRONG> (Thumb, 180 bytes, Stack size 16 bytes, key.o(.text.Key_Read))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = Key_Read
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
@@ -1147,14 +1148,14 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(.text)
 </UL>
 <P><STRONG><a name="[40]"></a>TIM6_DAC_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32g4xx_it.o(.text.TIM6_DAC_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = TIM6_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g474xx.o(RESET)
 </UL>
 <P><STRONG><a name="[41]"></a>TIM7_DAC_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32g4xx_it.o(.text.TIM7_DAC_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = TIM7_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = TIM7_DAC_IRQHandler &rArr; HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; Key_Process &rArr; Uart_Send_DMA &rArr; HAL_UART_Transmit_DMA &rArr; HAL_DMA_Start_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
@@ -1283,11 +1284,12 @@ Global Symbols
 <LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arm_cfft_radix8by2_f32
 </UL>
 
-<P><STRONG><a name="[6f]"></a>main</STRONG> (Thumb, 360 bytes, Stack size 88 bytes, main.o(.text.main))
+<P><STRONG><a name="[6f]"></a>main</STRONG> (Thumb, 372 bytes, Stack size 88 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 528<LI>Call Chain = main &rArr; FFT_Start &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FFT_Start
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;arm_fir_f32_lp

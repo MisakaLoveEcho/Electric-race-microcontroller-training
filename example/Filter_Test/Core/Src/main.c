@@ -123,7 +123,7 @@ int main(void)
 		Uart_Send_DMA(&uart1,"FFT:%0.2f\n",fft_outputbuf[i]);	
 	}
 	//Uart_Send_DMA(&uart1,"system start\n");
-	
+	HAL_TIM_Base_Start_IT(&htim7);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -190,43 +190,35 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void Key_Process(){
-  bool LongKeyMode;
-  uint8_t KeyNumber=Key_Read(&LongKeyMode);
-  switch(KeyNumber){
-    case 0:
+  uint8_t KeyEnvent=Key_Read();
+  switch(KeyEnvent){
+    case KEY_NONE:
       break;
-    case 1:
-      if(LongKeyMode==false){
+    case KEY1_Short:
         Uart_Send_DMA(&uart1,"KEY1 short\n");
-      }
-      else{
-        Uart_Send_DMA(&uart1,"KEY1 long\n");
-      }
       break;
-    case 2:
-      if(LongKeyMode==false){
+    case KEY1_Long:
+				Uart_Send_DMA(&uart1,"KEY1 long\n");
+      break;
+		case KEY2_Short:
         Uart_Send_DMA(&uart1,"KEY2 short\n");
-      }
-      else{
-        Uart_Send_DMA(&uart1,"KEY2 long\n");
-      }
       break;
-    case 3:
-      if(LongKeyMode==false){
+    case KEY2_Long:
+				Uart_Send_DMA(&uart1,"KEY2 long\n");
+      break;
+		case KEY3_Short:
         Uart_Send_DMA(&uart1,"KEY3 short\n");
-      }
-      else{
-        Uart_Send_DMA(&uart1,"KEY3 long\n");
-      }
       break;
-    case 4:
-      if(LongKeyMode==false){
+    case KEY3_Long:
+				Uart_Send_DMA(&uart1,"KEY3 long\n");
+      break;
+		case KEY4_Short:
         Uart_Send_DMA(&uart1,"KEY4 short\n");
-      }
-      else{
-        Uart_Send_DMA(&uart1,"KEY4 long\n");
-      }
       break;
+    case KEY4_Long:
+				Uart_Send_DMA(&uart1,"KEY4 long\n");
+      break;
+
   }
 }
 /* USER CODE END 4 */
